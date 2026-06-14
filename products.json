@@ -1,0 +1,58 @@
+[
+  {
+  "id": 1,
+  "name": "DEAN BRIAR JERSEY",
+  "price": 999,
+  "image_url": "image/dean1.jpg",
+  "images": [
+    "image/dean1.jpg",
+    "image/dean2.jpg"
+  ],
+  "description": "Premium player edition jersey.",
+  "sizes": ["XS", "S", "M", "L", "XL"]
+},
+  {
+  "id": 1,
+  "name": "GRAHAM BRIAR JERSEY",
+  "price": 999,
+  "image_url": "image/dean1.jpg",
+  "images": [
+    "image/dean1.jpg",
+    "image/dean2.jpg"
+  ],
+  "description": "Premium player edition jersey.",
+  "sizes": ["XS", "S", "M", "L", "XL"]
+},
+  {
+    "id": 3,
+    "name": "Argentina 3-Star Jersey",
+    "price": 1699,
+    "image_url": "image/dean2.jpg",
+    "description": "Champions-inspired detailing in the unmistakable sky blue and white.",
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "id": 4,
+    "name": "Brazil Classic Home Jersey",
+    "price": 1599,
+    "image_url": "https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=900&q=85",
+    "description": "A bright, classic silhouette made for the game's most joyful supporters.",
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "id": 5,
+    "name": "Barcelona Midnight Jersey",
+    "price": 1699,
+    "image_url": "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=85",
+    "description": "A sleek dark alternate jersey with premium contrast detailing.",
+    "sizes": ["M", "L", "XL"]
+  },
+  {
+    "id": 6,
+    "name": "Portugal Heritage Jersey",
+    "price": 1599,
+    "image_url": "https://images.unsplash.com/photo-1575361204480-aadea25e6e68?auto=format&fit=crop&w=900&q=85",
+    "description": "A heritage-inspired national jersey with a modern athletic finish.",
+    "sizes": ["S", "M", "L", "XL", "XXL"]
+  }
+]
