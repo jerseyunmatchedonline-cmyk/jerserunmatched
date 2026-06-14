@@ -399,6 +399,15 @@ function startRazorpayCheckout() {
     name: "Jersey Unmatched",
     description: `${cart.reduce((sum, item) => sum + item.quantity, 0)} jersey item(s)`,
     handler(response) {
+      const orderData = {
+  customerName: customer.name,
+  phone: customer.phone,
+  address: customer.address,
+  paymentId: response.razorpay_payment_id,
+  cart: cart
+};
+
+saveOrderToGoogleSheets(orderData);
       processSuccessfulOrder({
         paymentId: response.razorpay_payment_id,
         customer,
@@ -435,7 +444,7 @@ function startRazorpayCheckout() {
  * on a trusted server/serverless function, verify razorpay_signature there,
  * and persist the verified order or send it to the store owner's order system.
  */
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw5a-xCjJiYexL_0gyEftOVS4gk1qiDLruHXqzTF70JZKavDa59b_8N6wulJKJj-vw4/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzzHKffOtb49YbL-I1GD1VKIGo5QTNyEQMDFlG5zCw3cHMMWWrhhWU6dkiPFnX4yV6i/exec";
 
 async function saveOrderToGoogleSheets(orderData) {
 
