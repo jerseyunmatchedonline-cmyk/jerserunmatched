@@ -372,7 +372,7 @@ function startRazorpayCheckout() {
   if (RAZORPAY_KEY_ID === "rzp_test_T1SowsNwXzKTUE") {
     alert("Add your Razorpay Key ID to script.js before accepting live payments.");
     return;
-  } ̰
+  }
 
   if (typeof window.Razorpay !== "function") {
     alert("Razorpay Checkout could not be loaded. Check your connection and try again.");
@@ -384,6 +384,7 @@ function startRazorpayCheckout() {
     phone: document.getElementById("customer-phone").value.trim(),
     address: document.getElementById("customer-address").value.trim()
   };
+
 
   const totalAmount = getCartTotal();
   const itemSummary = cart
