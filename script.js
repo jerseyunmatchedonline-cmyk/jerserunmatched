@@ -1,6 +1,6 @@
 "use strict";
 
-const RAZORPAY_KEY_ID = "rzp_test_T1SowsNwXzKTUE";
+const RAZORPAY_KEY_ID = "rzp_live_T1YDJqR5ANikn2";
 const CART_STORAGE_KEY = "jersey-unmatched-cart-v1";
 
 let products = [];
@@ -369,10 +369,10 @@ function proceedToCheckout() {
 }
 
 function startRazorpayCheckout() {
-  if (RAZORPAY_KEY_ID === "YOUR_RAZORPAY_KEY_ID") {
+  if (RAZORPAY_KEY_ID === "rzp_test_T1SowsNwXzKTUE") {
     alert("Add your Razorpay Key ID to script.js before accepting live payments.");
     return;
-  }
+  } ̰
 
   if (typeof window.Razorpay !== "function") {
     alert("Razorpay Checkout could not be loaded. Check your connection and try again.");
