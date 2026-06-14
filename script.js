@@ -435,9 +435,40 @@ function startRazorpayCheckout() {
  * on a trusted server/serverless function, verify razorpay_signature there,
  * and persist the verified order or send it to the store owner's order system.
  */
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw5a-xCjJiYexL_0gyEftOVS4gk1qiDLruHXqzTF70JZKavDa59b_8N6wulJKJj-vw4/exec";
+
+async function saveOrderToGoogleSheets(orderData) {
+
+  try {
+
+    await fetch(GOOGLE_SCRIPT_URL, {
+
+      method: "POST",
+
+      mode: "no-cors",
+
+      headers: {
+
+        "Content-Type": "application/json"
+
+      },
+
+      body: JSON.stringify(orderData)
+
+    });
+
+  }
+
+  catch(error) {
+
+    console.error(error);
+
+  }
+
+}
 function processSuccessfulOrder(orderData) {
   console.info("Successful checkout received:", orderData);
-
+saveOrderToGoogleSheets(orderData);
   cart = [];
   saveCart();
   renderCart();
