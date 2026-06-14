@@ -477,7 +477,7 @@ async function saveOrderToGoogleSheets(orderData) {
 }
 function processSuccessfulOrder(orderData) {
   console.info("Successful checkout received:", orderData);
-saveOrderToGoogleSheets(orderData);
+
   cart = [];
   saveCart();
   renderCart();
