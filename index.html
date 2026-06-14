@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Premium football jerseys, player editions, and fan editions delivered across India.">
+  <meta name="description" content="Premium jerseys delivered across India.">
   <meta name="theme-color" content="#08090b">
-  <title>Jersey Unmatched | Premium Football Jerseys</title>
+  <title>Jersey Unmatched | Premium Jerseys</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -32,21 +33,66 @@
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
   <style>
-    html { scroll-behavior: smooth; }
-    body { background: #08090b; }
-    .page-panel { display: none; }
-    .page-panel.active { display: block; animation: reveal .3s ease-out; }
-    .nav-link.active { color: #f4b942; }
-    .cart-open { overflow: hidden; }
-    .cart-backdrop.is-open { visibility: visible; opacity: 1; }
-    .cart-backdrop.is-open .cart-panel { transform: translateX(0); }
-    .success-modal.is-open { visibility: visible; opacity: 1; }
-    @keyframes reveal {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
+    html {
+      scroll-behavior: smooth;
     }
+
+    body {
+      background: #08090b;
+    }
+
+    .page-panel {
+      display: none;
+    }
+
+    .page-panel.active {
+      display: block;
+      animation: reveal .3s ease-out;
+    }
+
+    .nav-link.active {
+      color: #f4b942;
+    }
+
+    .cart-open {
+      overflow: hidden;
+    }
+
+    .cart-backdrop.is-open {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .cart-backdrop.is-open .cart-panel {
+      transform: translateX(0);
+    }
+
+    .success-modal.is-open {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+      }
     }
   </style>
 </head>
@@ -54,26 +100,12 @@
 <body class="min-h-screen font-body text-cream antialiased selection:bg-gold selection:text-ink">
   <header class="sticky top-0 z-40 border-b border-white/10 bg-ink/90 backdrop-blur-xl">
     <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-      <button
-  type="button"
-  data-tab="home"
-  class="shrink-0"
-  aria-label="Go to home page"
->
-  
-</button>
-        <button
-  type="button"
-  data-tab="home"
-  class="shrink-0"
-  aria-label="Go to home page"
->
-  <img
-    src="image/logo.png"
-    alt="Jersey Unmatched"
-    class="h-24 w-auto object-contain sm:h-32"
-  >
-</button>
+      <button type="button" data-tab="home" class="shrink-0" aria-label="Go to home page">
+
+      </button>
+      <button type="button" data-tab="home" class="shrink-0" aria-label="Go to home page">
+        <img src="image/logo.png" alt="Jersey Unmatched" class="h-24 w-auto object-contain sm:h-30">
+      </button>
       </button>
 
       <nav aria-label="Primary navigation" class="hidden items-center gap-10 text-xl font-bold md:flex">
@@ -84,27 +116,39 @@
       </nav>
 
       <div class="flex items-center gap-2">
-        <button id="mobile-menu-button" type="button" class="rounded-full border border-white/10 p-3 md:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M4 7h16M4 12h16M4 17h16"/>
+        <button id="mobile-menu-button" type="button" class="rounded-full border border-white/10 p-3 md:hidden"
+          aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" />
           </svg>
         </button>
-        <button id="cart-button" type="button" class="relative flex items-center gap-2 rounded-full bg-gold px-4 py-3 text-sm font-extrabold text-ink transition hover:-translate-y-0.5 hover:bg-amber-300" aria-label="Open shopping bag">
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M6 8h12l1 13H5L6 8Z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/>
+        <button id="cart-button" type="button"
+          class="relative flex items-center gap-2 rounded-full bg-gold px-4 py-3 text-sm font-extrabold text-ink transition hover:-translate-y-0.5 hover:bg-amber-300"
+          aria-label="Open shopping bag">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            aria-hidden="true">
+            <path d="M6 8h12l1 13H5L6 8Z" />
+            <path d="M9 10V6a3 3 0 0 1 6 0v4" />
           </svg>
           <span class="hidden sm:inline">Bag</span>
-          <span id="cart-count" class="flex h-5 min-w-5 items-center justify-center rounded-full bg-ink px-1 text-[11px] text-white" aria-live="polite">0</span>
+          <span id="cart-count"
+            class="flex h-5 min-w-5 items-center justify-center rounded-full bg-ink px-1 text-[11px] text-white"
+            aria-live="polite">0</span>
         </button>
       </div>
     </div>
 
     <nav id="mobile-menu" aria-label="Mobile navigation" class="hidden border-t border-white/10 px-4 py-3 md:hidden">
       <div class="mx-auto grid max-w-7xl grid-cols-2 gap-2">
-        <button type="button" data-tab="home" class="nav-link active rounded-lg px-3 py-2 text-left text-lg hover:bg-white/5">Home</button>
-        <button type="button" data-tab="products" class="nav-link rounded-lg px-3 py-2 text-left text-lg hover:bg-white/5">Our Products</button>
-        <button type="button" data-tab="about" class="nav-link rounded-lg px-3 py-2 text-left text-lg hover:bg-white/5">About Us</button>
-        <button type="button" data-tab="contact" class="nav-link rounded-lg px-3 py-2 text-left text-lg hover:bg-white/5">Contact Us</button>
+        <button type="button" data-tab="home"
+          class="nav-link active rounded-lg px-3 py-2 text-left text-lg hover:bg-white/5">Home</button>
+        <button type="button" data-tab="products"
+          class="nav-link rounded-lg px-3 py-2 text-left text-lg hover:bg-white/5">Our Products</button>
+        <button type="button" data-tab="about"
+          class="nav-link rounded-lg px-3 py-2 text-left text-lg hover:bg-white/5">About Us</button>
+        <button type="button" data-tab="contact"
+          class="nav-link rounded-lg px-3 py-2 text-left text-lg hover:bg-white/5">Contact Us</button>
       </div>
     </nav>
   </header>
@@ -112,9 +156,14 @@
   <main>
     <section id="home" class="page-panel active">
       <div class="relative isolate overflow-hidden border-b border-white/10">
-        <div class="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_78%_28%,rgba(244,185,66,.2),transparent_32%),linear-gradient(135deg,#08090b_15%,#16130e_100%)]"></div>
-        <div class="absolute -right-28 top-12 -z-10 h-80 w-80 rounded-full border-[60px] border-white/[0.025] sm:h-[34rem] sm:w-[34rem]"></div>
-        <div class="mx-auto grid min-h-[72vh] max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.05fr_.95fr] lg:px-8">
+        <div
+          class="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_78%_28%,rgba(244,185,66,.2),transparent_32%),linear-gradient(135deg,#08090b_15%,#16130e_100%)]">
+        </div>
+        <div
+          class="absolute -right-28 top-12 -z-10 h-80 w-80 rounded-full border-[60px] border-white/[0.025] sm:h-[34rem] sm:w-[34rem]">
+        </div>
+        <div
+          class="mx-auto grid min-h-[72vh] max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.05fr_.95fr] lg:px-8">
           <div class="max-w-3xl">
             <p class="mb-5 text-xs font-extrabold uppercase tracking-[0.32em] text-gold">Wear the game</p>
             <h1 class="font-display text-5xl uppercase leading-[0.92] tracking-[-0.055em] sm:text-7xl lg:text-[6.2rem]">
@@ -124,16 +173,23 @@
               Premium player and fan edition football jerseys, selected for match-day energy and everyday comfort.
             </p>
             <div class="mt-9 flex flex-wrap gap-3">
-              <button type="button" data-tab="products" class="rounded-full bg-gold px-7 py-4 text-sm font-extrabold text-ink transition hover:-translate-y-0.5 hover:bg-amber-300">Shop the collection</button>
-              <button type="button" data-tab="about" class="rounded-full border border-white/20 px-7 py-4 text-sm font-bold transition hover:border-gold hover:text-gold">Our story</button>
+              <button type="button" data-tab="products"
+                class="rounded-full bg-gold px-7 py-4 text-sm font-extrabold text-ink transition hover:-translate-y-0.5 hover:bg-amber-300">Shop
+                the collection</button>
+              <button type="button" data-tab="about"
+                class="rounded-full border border-white/20 px-7 py-4 text-sm font-bold transition hover:border-gold hover:text-gold">Our
+                story</button>
             </div>
           </div>
 
           <div class="relative mx-auto w-full max-w-md lg:max-w-none">
             <div class="aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/10 bg-panel shadow-glow">
-              <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1100&q=85" alt="Football player standing on a stadium pitch" class="h-full w-full object-cover opacity-80" fetchpriority="high">
+              <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1100&q=85"
+                alt="Football player standing on a stadium pitch" class="h-full w-full object-cover opacity-80"
+                fetchpriority="high">
             </div>
-            <div class="absolute -bottom-5 -left-4 rounded-2xl border border-white/10 bg-ink/90 p-4 shadow-2xl backdrop-blur sm:-left-8 sm:p-5">
+            <div
+              class="absolute -bottom-5 -left-4 rounded-2xl border border-white/10 bg-ink/90 p-4 shadow-2xl backdrop-blur sm:-left-8 sm:p-5">
               <p class="text-[10px] font-bold uppercase tracking-[0.25em] text-white/40">New season</p>
               <p class="mt-1 font-display text-xl">2026 COLLECTION</p>
             </div>
@@ -147,23 +203,27 @@
             <p class="text-xs font-bold uppercase tracking-[0.28em] text-gold">The unmatched standard</p>
             <h2 class="mt-3 font-display text-3xl uppercase sm:text-4xl">Made for ninety minutes and beyond.</h2>
           </div>
-          <p class="max-w-md text-sm leading-6 text-white/50">Thoughtful details, dependable delivery, and support from people who know the game.</p>
+          <p class="max-w-md text-sm leading-6 text-white/50">Thoughtful details, dependable delivery, and support from
+            people who know the game.</p>
         </div>
         <div class="grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 md:grid-cols-3">
           <article class="bg-panel p-7">
             <span class="font-display text-4xl text-gold">01</span>
             <h3 class="mt-8 text-lg font-bold">Premium fabric</h3>
-            <p class="mt-2 text-sm leading-6 text-white/50">Breathable, sweat-wicking material with a sharp athletic fit.</p>
+            <p class="mt-2 text-sm leading-6 text-white/50">Breathable, sweat-wicking material with a sharp athletic
+              fit.</p>
           </article>
           <article class="bg-panel p-7">
             <span class="font-display text-4xl text-gold">02</span>
             <h3 class="mt-8 text-lg font-bold">Pan-India delivery</h3>
-            <p class="mt-2 text-sm leading-6 text-white/50">Carefully packed orders with trackable shipping across India.</p>
+            <p class="mt-2 text-sm leading-6 text-white/50">Carefully packed orders with trackable shipping across
+              India.</p>
           </article>
           <article class="bg-panel p-7">
             <span class="font-display text-4xl text-gold">03</span>
             <h3 class="mt-8 text-lg font-bold">Human support</h3>
-            <p class="mt-2 text-sm leading-6 text-white/50">Friendly help with sizing, variants, delivery, and order questions.</p>
+            <p class="mt-2 text-sm leading-6 text-white/50">Friendly help with sizing, variants, delivery, and order
+              questions.</p>
           </article>
         </div>
       </div>
@@ -176,7 +236,8 @@
           <h2 class="mt-3 font-display text-4xl uppercase sm:text-5xl">Our Products</h2>
           <p class="mt-4 max-w-xl text-white/50">Choose your colours, select your size, and add it to the bag.</p>
         </div>
-        <div id="product-status" class="rounded-2xl border border-white/10 bg-panel p-6 text-white/60">Loading the collection...</div>
+        <div id="product-status" class="rounded-2xl border border-white/10 bg-panel p-6 text-white/60">Loading the
+          collection...</div>
         <div id="product-grid" class="hidden grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
       </div>
     </section>
@@ -185,12 +246,15 @@
       <div class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-24">
         <div>
           <p class="text-xs font-bold uppercase tracking-[0.28em] text-gold">Our Story</p>
-          <h2 class="mt-4 font-display text-4xl uppercase leading-tight sm:text-6xl">Football culture, without the impossible price tag.</h2>
+          <h2 class="mt-4 font-display text-4xl uppercase leading-tight sm:text-6xl">Premium Jerseys, without the
+            impossible price tag.</h2>
         </div>
         <div class="space-y-6 text-base leading-8 text-white/60">
-          <p>Jersey Unmatched began with a simple belief: supporters should be able to wear the colours they love with pride, comfort, and confidence.</p>
-          <p>We focus on carefully selected player and fan edition jerseys that balance finish, feel, and value. Every collection is chosen by football people, for football people.</p>
-          <p>Our mission is to make premium football style more accessible across India while offering honest guidance on sizing, dependable delivery, and responsive support.</p>
+          <p>Jersey Unmatched began with a simple belief: supporters should be able to wear the colours they love with
+            pride, comfort, and confidence.</p>
+
+          <p>Our mission is to Jersys  more accessible across India while offering honest guidance
+            on sizing, dependable delivery, and responsive support.</p>
         </div>
       </div>
     </section>
@@ -200,22 +264,31 @@
         <div>
           <p class="text-xs font-bold uppercase tracking-[0.28em] text-gold">Contact Us</p>
           <h2 class="mt-4 font-display text-4xl uppercase sm:text-5xl">Let’s talk football.</h2>
-          <p class="mt-5 leading-7 text-white/50">Questions about sizing, delivery, or an existing order? Send us a message and our team will get back to you.</p>
-          <p class="mt-6 text-sm text-white/70">Email: support@jerseyunmatched.online</p>
+          <p class="mt-5 leading-7 text-white/50">Questions about sizing, delivery, or an existing order? Send us a
+            message and our team will get back to you.</p>
+          <p class="mt-6 text-sm text-white/70">Email: jerseyunmatchedonline@gmail.com</p>
         </div>
         <form id="contact-form" class="rounded-3xl border border-white/10 bg-panel p-6 sm:p-8">
           <div class="grid gap-5 sm:grid-cols-2">
             <label class="text-sm font-semibold">Name
-              <input name="name" type="text" autocomplete="name" required class="mt-2 w-full rounded-xl border border-white/10 bg-ink px-4 py-3 font-normal outline-none transition focus:border-gold" placeholder="Your name">
+              <input name="name" type="text" autocomplete="name" required
+                class="mt-2 w-full rounded-xl border border-white/10 bg-ink px-4 py-3 font-normal outline-none transition focus:border-gold"
+                placeholder="Your name">
             </label>
             <label class="text-sm font-semibold">Email
-              <input name="email" type="email" autocomplete="email" required class="mt-2 w-full rounded-xl border border-white/10 bg-ink px-4 py-3 font-normal outline-none transition focus:border-gold" placeholder="you@example.com">
+              <input name="email" type="email" autocomplete="email" required
+                class="mt-2 w-full rounded-xl border border-white/10 bg-ink px-4 py-3 font-normal outline-none transition focus:border-gold"
+                placeholder="you@example.com">
             </label>
           </div>
           <label class="mt-5 block text-sm font-semibold">Message
-            <textarea name="message" rows="6" required class="mt-2 w-full resize-none rounded-xl border border-white/10 bg-ink px-4 py-3 font-normal outline-none transition focus:border-gold" placeholder="How can we help?"></textarea>
+            <textarea name="message" rows="6" required
+              class="mt-2 w-full resize-none rounded-xl border border-white/10 bg-ink px-4 py-3 font-normal outline-none transition focus:border-gold"
+              placeholder="How can we help?"></textarea>
           </label>
-          <button type="submit" class="mt-5 w-full rounded-xl bg-gold px-5 py-3.5 text-sm font-extrabold text-ink transition hover:bg-amber-300">Send message</button>
+          <button type="submit"
+            class="mt-5 w-full rounded-xl bg-gold px-5 py-3.5 text-sm font-extrabold text-ink transition hover:bg-amber-300">Send
+            message</button>
           <p id="contact-status" class="mt-3 hidden text-sm text-gold" role="status"></p>
         </form>
       </div>
@@ -231,9 +304,11 @@
     <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:px-8">
       <div>
         <p class="font-display text-xl">JERSEY <span class="text-gold">UNMATCHED</span></p>
-        <p class="mt-3 max-w-sm text-sm leading-6 text-white/40">Premium football jerseys for supporters who carry the game everywhere.</p>
+        <p class="mt-3 max-w-sm text-sm leading-6 text-white/40">Premium football jerseys for supporters who carry the
+          game everywhere.</p>
       </div>
-      <nav aria-label="Legal pages" class="grid grid-cols-2 gap-3 text-sm text-white/50 md:justify-self-end md:text-right">
+      <nav aria-label="Legal pages"
+        class="grid grid-cols-2 gap-3 text-sm text-white/50 md:justify-self-end md:text-right">
         <button type="button" data-tab="terms" class="transition hover:text-gold">Terms & Conditions</button>
         <button type="button" data-tab="shipping" class="transition hover:text-gold">Shipping & Delivery</button>
         <button type="button" data-tab="privacy" class="transition hover:text-gold">Privacy Policy</button>
@@ -245,15 +320,24 @@
     </div>
   </footer>
 
-  <div id="cart-drawer" class="cart-backdrop invisible fixed inset-0 z-50 bg-black/70 opacity-0 transition-opacity duration-300" aria-hidden="true">
-    <aside class="cart-panel ml-auto flex h-full w-full max-w-md translate-x-full flex-col border-l border-white/10 bg-ink shadow-2xl transition-transform duration-300" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+  <div id="cart-drawer"
+    class="cart-backdrop invisible fixed inset-0 z-50 bg-black/70 opacity-0 transition-opacity duration-300"
+    aria-hidden="true">
+    <aside
+      class="cart-panel ml-auto flex h-full w-full max-w-md translate-x-full flex-col border-l border-white/10 bg-ink shadow-2xl transition-transform duration-300"
+      role="dialog" aria-modal="true" aria-labelledby="cart-title">
       <div class="flex items-center justify-between border-b border-white/10 px-5 py-5">
         <div>
           <p class="text-[10px] font-bold uppercase tracking-[0.25em] text-gold">Your selection</p>
           <h2 id="cart-title" class="mt-1 font-display text-2xl uppercase">Shopping Bag</h2>
         </div>
-        <button id="close-cart" type="button" class="rounded-full border border-white/10 p-2.5 text-white/60 transition hover:text-white" aria-label="Close shopping bag">
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        <button id="close-cart" type="button"
+          class="rounded-full border border-white/10 p-2.5 text-white/60 transition hover:text-white"
+          aria-label="Close shopping bag">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            aria-hidden="true">
+            <path d="m6 6 12 12M18 6 6 18" />
+          </svg>
         </button>
       </div>
 
@@ -266,33 +350,51 @@
         </div>
 
         <form id="checkout-form" class="hidden space-y-3">
-          <input id="customer-name" type="text" autocomplete="name" required placeholder="Full name" class="w-full rounded-xl border border-white/10 bg-ink px-4 py-3 text-sm outline-none focus:border-gold">
-          <input id="customer-phone" type="tel" autocomplete="tel" inputmode="numeric" required pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10-digit phone number" class="w-full rounded-xl border border-white/10 bg-ink px-4 py-3 text-sm outline-none focus:border-gold">
-          <textarea id="customer-address" autocomplete="street-address" required minlength="15" rows="3" placeholder="Complete shipping address with PIN code" class="w-full resize-none rounded-xl border border-white/10 bg-ink px-4 py-3 text-sm outline-none focus:border-gold"></textarea>
-          <p class="text-[11px] leading-4 text-white/35">Your delivery details are passed to Razorpay with this transaction.</p>
+          <input id="customer-name" type="text" autocomplete="name" required placeholder="Full name"
+            class="w-full rounded-xl border border-white/10 bg-ink px-4 py-3 text-sm outline-none focus:border-gold">
+          <input id="customer-phone" type="tel" autocomplete="tel" inputmode="numeric" required pattern="[6-9][0-9]{9}"
+            maxlength="10" placeholder="10-digit phone number"
+            class="w-full rounded-xl border border-white/10 bg-ink px-4 py-3 text-sm outline-none focus:border-gold">
+          <textarea id="customer-address" autocomplete="street-address" required minlength="15" rows="3"
+            placeholder="Complete shipping address with PIN code"
+            class="w-full resize-none rounded-xl border border-white/10 bg-ink px-4 py-3 text-sm outline-none focus:border-gold"></textarea>
+          <p class="text-[11px] leading-4 text-white/35">Your delivery details are passed to Razorpay with this
+            transaction.</p>
         </form>
 
-        <button id="checkout-button" type="button" class="w-full rounded-xl bg-gold px-5 py-3.5 text-sm font-extrabold text-ink transition hover:bg-amber-300 disabled:cursor-not-allowed disabled:opacity-40">Proceed to delivery details</button>
+        <button id="checkout-button" type="button"
+          class="w-full rounded-xl bg-gold px-5 py-3.5 text-sm font-extrabold text-ink transition hover:bg-amber-300 disabled:cursor-not-allowed disabled:opacity-40">Proceed
+          to delivery details</button>
       </div>
     </aside>
   </div>
 
-  <div id="success-modal" class="success-modal invisible fixed inset-0 z-[60] flex items-center justify-center bg-black/80 px-4 opacity-0 transition-opacity" aria-hidden="true">
-    <div class="w-full max-w-md rounded-3xl border border-gold/30 bg-panel p-8 text-center shadow-glow" role="dialog" aria-modal="true" aria-labelledby="success-title">
+  <div id="success-modal"
+    class="success-modal invisible fixed inset-0 z-[60] flex items-center justify-center bg-black/80 px-4 opacity-0 transition-opacity"
+    aria-hidden="true">
+    <div class="w-full max-w-md rounded-3xl border border-gold/30 bg-panel p-8 text-center shadow-glow" role="dialog"
+      aria-modal="true" aria-labelledby="success-title">
       <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gold text-ink">
-        <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>
+        <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          aria-hidden="true">
+          <path d="m5 12 4 4L19 6" />
+        </svg>
       </div>
       <p class="mt-6 text-xs font-bold uppercase tracking-[0.28em] text-gold">Payment successful</p>
       <h2 id="success-title" class="mt-3 font-display text-3xl uppercase">Your order is confirmed.</h2>
-      <p class="mt-4 text-sm leading-6 text-white/50">Thank you, <span id="success-name" class="text-white"></span>. Keep this transaction ID for your records.</p>
+      <p class="mt-4 text-sm leading-6 text-white/50">Thank you, <span id="success-name" class="text-white"></span>.
+        Keep this transaction ID for your records.</p>
       <div class="mt-5 rounded-xl border border-white/10 bg-ink p-4">
         <p class="text-[10px] uppercase tracking-widest text-white/30">Transaction Order ID</p>
         <p id="success-payment-id" class="mt-2 break-all font-mono text-sm text-gold"></p>
       </div>
-      <button id="success-close" type="button" class="mt-6 w-full rounded-xl bg-gold px-5 py-3.5 text-sm font-extrabold text-ink hover:bg-amber-300">Continue shopping</button>
+      <button id="success-close" type="button"
+        class="mt-6 w-full rounded-xl bg-gold px-5 py-3.5 text-sm font-extrabold text-ink hover:bg-amber-300">Continue
+        shopping</button>
     </div>
   </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>
