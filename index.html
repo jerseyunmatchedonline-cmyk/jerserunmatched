@@ -111,6 +111,13 @@
       <nav aria-label="Primary navigation" class="hidden items-center gap-10 text-xl font-bold md:flex">
         <button type="button" data-tab="home" class="nav-link active transition hover:text-gold">Home</button>
         <button type="button" data-tab="products" class="nav-link transition hover:text-gold">Our Products</button>
+        <button
+onclick="switchTab('sizechart')"
+class="rounded-full bg-gold px-6 py-3 font-bold text-black">
+
+View Size Chart
+
+</button>
         <button type="button" data-tab="about" class="nav-link transition hover:text-gold">About Us</button>
         <button type="button" data-tab="contact" class="nav-link transition hover:text-gold">Contact Us</button>
       </nav>
@@ -258,6 +265,23 @@
         </div>
       </div>
     </section>
+    <section id="sizechart" class="page-panel hidden">
+
+<div class="max-w-4xl mx-auto px-6 py-16">
+
+<h2 class="text-5xl font-bold text-gold mb-8">
+Size Chart
+</h2>
+
+<img
+src="image/briarsize.jpg"
+alt="Briar Jersey Size Chart"
+class="rounded-3xl w-full border border-white/10"
+/>
+
+</div>
+
+</section>
 
     <section id="contact" class="page-panel">
       <div class="mx-auto grid max-w-5xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[.8fr_1.2fr] lg:px-8 lg:py-24">
