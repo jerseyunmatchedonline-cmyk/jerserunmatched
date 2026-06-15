@@ -30,7 +30,7 @@ const policies = {
     title: "Shipping and Delivery",
     intro: "We ship eligible orders across India using trackable delivery partners.",
     sections: [
-      ["Processing time", "Orders are normally checked, packed, and dispatched within 1–3 business days after payment confirmation. Weekends and public holidays may extend processing time."],
+      ["Processing time", "Orders are normally checked, packed, and dispatched within 4-5 business days after payment confirmation. Weekends and public holidays may extend processing time."],
       ["Estimated delivery", "Most orders arrive within 4–9 business days after dispatch, depending on the destination PIN code and courier conditions."],
       ["Tracking", "When available, tracking information is shared using the contact details supplied during checkout. Tracking may take up to 24 hours to activate after dispatch."],
       ["Delays and failed delivery", "Weather, regional restrictions, courier disruptions, and incorrect addresses may cause delays. Please contact support if an order is significantly overdue."]
@@ -540,7 +540,7 @@ function renderPolicies() {
             </article>
           `).join("")}
         </div>
-        <p class="mt-6 text-xs text-white/30">Last updated: June 14, 2026. Replace this sample policy text with terms reviewed for your business before launch.</p>
+        <p class="mt-6 text-xs text-white/30">Contact us for any further questions.</p>
       </div>
     `;
   });
